@@ -10,4 +10,4 @@
 * [Taskmaster](http://taskmaster-frontend-bh.s3-website-us-west-2.amazonaws.com/)
 
 ## Backend Repository
-* [Java - Spring MVC](https://github.com/Kai-ros/taskmaster-frontend)
+* [Java - Spring MVC](https://github.com/Kai-ros/taskmaster)
