@@ -1,8 +1,11 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import History from './components/History';
-import Task from './components/Task';
 
-import './app.scss';
+import Banner from './components/Banner';
+import Task from './components/Task';
+import History from './components/History';
+
+import './styling/reset.scss';
+import './styling/app.scss';
 
 const API = 'http://localhost:5000';
 const getRoute = '/api/v1/tasks';
@@ -29,18 +32,19 @@ function App() {
 
   return (
     <Fragment className="app">
-      <h1>TASKS</h1>
-      <ul>
+      <Banner />
+      <ul id="taskList">
         {tasks.map((task, index) => {
           return (
-            <li key={task.id}>
-              <details>
+            <Fragment className="taskContainers">
+              <li key={task.id} className="tasks">
                 <Task task={task} />
-                <summary>
-                </summary>
-                <History history={task.history} />
-              </details>
-            </li>
+                <details className="summaries">
+                  <summary> Summary of history: </summary>
+                  <History history={task.history} />
+                </details>
+              </li>
+            </Fragment>
           )
         })}
       </ul>

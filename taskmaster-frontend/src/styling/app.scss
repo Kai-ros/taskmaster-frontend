@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {  
+    background: #a1c0e0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#taskList {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 50%;
+}
+
+.tasks {
+    background-color: #f9fbfd;
+    border: #003152 solid .05em;
+    border-radius: .5em;
+    margin: 1em;
+    padding: 1.5em;
+}
+
+.summaries {
+    padding: .5em;
+}
+
