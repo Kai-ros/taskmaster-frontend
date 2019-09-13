@@ -3,15 +3,16 @@ import React, { useState, useEffect, Fragment } from 'react';
 import Banner from './components/Banner';
 import Task from './components/Task';
 import History from './components/History';
+import AddImage from './components/AddImage';
 
 import './styling/reset.scss';
 import './styling/app.scss';
 
-const API = 'http://localhost:5000';
-const getRoute = '/api/v1/tasks';
+const API = 'http://taskmaster-env.5p2evkjp2m.us-west-2.elasticbeanstalk.com/api/v1';
+const getRoute = '/tasks';
 
 
-function App() {
+export default function App() {
 
   const [tasks, setTasks] = useState([]);
 
@@ -20,13 +21,6 @@ function App() {
       .then(data => data.json())
       .then(fetchedTasks => setTasks(fetchedTasks));
   }
-
-  function deleteTask(id) {
-    fetch()
-      .method()
-      .then()
-  }
-  // onClick={deleteTask}>{task.title}
 
   useEffect(getTasks, []);
 
@@ -38,12 +32,15 @@ function App() {
           return (
             <Fragment className="taskContainers">
               <li key={task.id} className="tasks">
+                <img src={task.imageURL}></img>
                 <Task task={task} />
                 <details className="summaries">
                   <summary> Summary of history: </summary>
                   <History history={task.history} />
                 </details>
+                <AddImage api={API} task={task} reload={getTasks}></AddImage>
               </li>
+
             </Fragment>
           )
         })}
@@ -52,4 +49,3 @@ function App() {
   );
 }
 
-export default App;

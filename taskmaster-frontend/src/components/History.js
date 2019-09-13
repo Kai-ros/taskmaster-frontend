@@ -3,7 +3,7 @@ import React, { useState, useEffect, Fragment } from 'react';
 import '../styling/reset.scss';
 import '../styling/history.scss';
 
-function History(props) {
+export default function History(props) {
   return (
     <Fragment>
       <ol className="historySummaries">
@@ -20,4 +20,3 @@ function History(props) {
   )
 }
 
-export default History;

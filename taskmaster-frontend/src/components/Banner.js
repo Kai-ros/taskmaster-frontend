@@ -3,7 +3,7 @@ import React, { useState, useEffect, Fragment } from 'react';
 import '../styling/reset.scss';
 import '../styling/banner.scss';
 
-function Banner(props) {
+export default function Banner(props) {
   return (
     <Fragment className="banner" id="banner">
       <h1 >TASKS </h1>
@@ -11,4 +11,3 @@ function Banner(props) {
   )
 }
 
-export default Banner;
