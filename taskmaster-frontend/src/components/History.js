@@ -4,10 +4,11 @@ import '../styling/reset.scss';
 import '../styling/history.scss';
 
 export default function History(props) {
+  let history = props.history || [];
   return (
     <Fragment>
       <ol className="historySummaries">
-        {props.history.map((record, index) => {
+        {history.map((record, index) => {
           return (
             <li key={index} className="summaryItems">
               <span>{record.date}</span>
